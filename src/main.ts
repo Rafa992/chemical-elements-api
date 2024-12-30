@@ -12,6 +12,6 @@ async function bootstrap() {
     exposedHeaders: 'Set-Cookie' 
   })
   const port = process.env.PORT || 4000;
-  await app.listen(port, () => console.log(`App is running on port ${port}`)); 
+  await app.listen(port); 
 }
 bootstrap();
