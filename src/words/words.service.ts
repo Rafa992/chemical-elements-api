@@ -71,4 +71,14 @@ export class WordsService {
 			throw new Error('error while editing element: ' + error.message)
 		}
 	}
+
+	async restartWord(){
+		try {
+			await this.prisma.elements.deleteMany();
+			const newElements = await this.createWords();
+			return newElements
+		} catch (error) {
+			throw new Error('error while delete elements: ' + error.message)
+		}
+	}
 }

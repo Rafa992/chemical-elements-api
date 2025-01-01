@@ -29,4 +29,10 @@ export class WordsController {
   async editWord(@Body() wordData: EditChemicalElementsDto) {
     return await this.wordsService.editWord(wordData);
   }
+  
+  @Auth()
+  @Delete('delete-element')
+  async restartWord() {
+    return await this.wordsService.restartWord();
+  }
 }
